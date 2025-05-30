@@ -16,15 +16,15 @@ The primary goals of this task are:
 
 ```plaintext
 .
-├── .vscode/                # VS Code workspace settings
-├── .github/workflows/      # GitHub Actions CI/CD workflows
+├── .vscode/
+├── .github/workflows/
 │   └── unittests.yml
-├── notebooks/              # Jupyter notebooks for exploration
+├── notebooks/
 │   └── task1_eda.ipynb
-├── src/                    # Source code modules
-├── scripts/                # Utility scripts (to be populated)
-├── tests/                  # Unit tests (to be implemented)
-├── requirements.txt        # Required Python packages
-├── README.md               # This file
-└── .gitignore              # Files to ignore in Git
+├── src/
+├── scripts/
+├── tests/
+├── requirements.txt
+├── README.md               # You are here
+└── .gitignore
 ```
