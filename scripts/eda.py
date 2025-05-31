@@ -1,5 +1,6 @@
 # scripts/eda.py
 
+import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -8,7 +9,9 @@ from textblob import TextBlob
 
 # === CONFIGURATION ===
 DATA_PATH = "../data/raw_analyst_ratings.csv"  # You can change this to any other stock CSV
-PLOT_DIR = "plots"  # Optional: save plots if you want
+PLOT_DIR = "../notebooks"  #Place where the plots to be saved
+
+os.makedirs(PLOT_DIR, exist_ok=True)
 
 # === LOAD DATA ===
 print("[INFO] Loading data...")
@@ -30,7 +33,8 @@ if 'headline' in df.columns:
     plt.xlabel("Length of Headline")
     plt.ylabel("Frequency")
     plt.tight_layout()
-    plt.show()
+    plt.savefig(f"{PLOT_DIR}/headline_length_distribution.png")
+    plt.close()
 
 # === 2. Publisher Analysis ===
 if 'publisher' in df.columns:
@@ -43,7 +47,7 @@ if 'publisher' in df.columns:
     plt.ylabel("Number of Articles")
     plt.xticks(rotation=45)
     plt.tight_layout()
-    plt.show()
+    plt.savefig(f"{PLOT_DIR}/top_publishers.png")
 
 # === 3. Time Series Analysis ===
 print("[INFO] Plotting article counts by date...")
@@ -57,7 +61,8 @@ if 'date' in df.columns:
     plt.ylabel("Number of Articles")
     plt.xticks(rotation=45)
     plt.tight_layout()
-    plt.show()
+    plt.savefig(f"{PLOT_DIR}/articles_per_day.png")
+    plt.close()
 
     df['hour'] = df['date'].dt.hour
     plt.figure(figsize=(8, 4))
@@ -66,7 +71,8 @@ if 'date' in df.columns:
     plt.xlabel("Hour")
     plt.ylabel("Frequency")
     plt.tight_layout()
-    plt.show()
+    plt.savefig(f"{PLOT_DIR}/article_publication_by_hour.png")
+    plt.close()
 
 # === 4. Topic Modeling (Keyword Extraction) ===
 if 'headline' in df.columns:
@@ -79,7 +85,8 @@ if 'headline' in df.columns:
     plt.axis("off")
     plt.title("Common Words in Headlines")
     plt.tight_layout()
-    plt.show()
+    plt.savefig(f"{PLOT_DIR}/headline_wordcloud.png")
+    plt.close()
 
 # === 5. Publisher Domain Analysis (Optional) ===
 if 'publisher' in df.columns:
@@ -93,4 +100,5 @@ if 'publisher' in df.columns:
         plt.title("Top Publisher Email Domains")
         plt.xticks(rotation=45)
         plt.tight_layout()
-        plt.show()
+        plt.savefig(f"{PLOT_DIR}/top_publisher_email_domains.png")
+        plt.close()
