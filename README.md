@@ -36,7 +36,7 @@ python scripts/fetch_stock_data.py
 python scripts/task3_sentiment_analysis.py
 
 #📁 Repository Structure
-```
+``` plain text
 .
 ├── data/
 │   ├── raw_analyst_ratings.csv    # News headlines
