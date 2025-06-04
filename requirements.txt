@@ -8,3 +8,4 @@ textblob
 jupyter
 plotly
 wordcloud
+yfinance
