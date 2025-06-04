@@ -1,30 +1,64 @@
-# 🧠 Week 1 Challenge: Predicting Stock Price Moves from News Sentiment
+# 🧠 Week 1 Challenge: News Sentiment Analysis for Stock Prediction
 
 ## 🚀 Project Overview
 
-This repository contains the work for **Week 1 of the 10 Academy Artificial Intelligence Mastery Challenge**, focused on analyzing financial news headlines to identify patterns and sentiment that may influence stock price movements.
+This repository contains the solution for **Week 1 of the 10 Academy AI Challenge**, implementing a pipeline to analyze the relationship between financial news sentiment and stock price movements of Agilent Technologies (NYSE: A).
 
-The primary goals of this task are:
+Key components:
+- Sentiment analysis of financial headlines using TextBlob
+- Stock price data processing from Yahoo Finance
+- Correlation analysis between news sentiment and price returns
+- Visualization of sentiment-return relationships
 
-- To set up a reproducible Python data science environment using Git and GitHub.
-- To conduct Exploratory Data Analysis (EDA) on financial news headlines.
-- To understand the temporal and textual patterns in the dataset.
+## 📊 Key Findings
 
----
+- Achieved correlation coefficient of [X] between sentiment scores and daily returns
+- Discovered [Y] pattern in sentiment distribution
+- Identified [Z] relationship between news volume and price volatility
 
-## 📁 Repository Structure
+## 🛠️ Implementation
 
-```plaintext
-.
-├── .vscode/
-├── .github/workflows/
-│   └── unittests.yml
-├── notebooks/
-│   └── task1_eda.ipynb
-├── src/
-├── scripts/
-├── tests/
-├── requirements.txt
-├── README.md               # You are here
-└── .gitignore
+### Data Pipeline
+1. **News Data**: Processed raw analyst ratings from `raw_analyst_ratings.csv`
+2. **Price Data**: Fetched historical prices using `yfinance` (2020-2021)
+3. **Sentiment Analysis**: Calculated polarity scores for headlines
+4. **Correlation**: Computed daily sentiment-return correlations
+
+### How to Run
+```bash
+# 1. Install dependencies
+pip install -r requirements.txt
+
+# 2. Download stock data
+python scripts/fetch_stock_data.py
+
+# 3. Run analysis
+python scripts/task3_sentiment_analysis.py
+
+#📁 Repository Structure
 ```
+.
+├── data/
+│   ├── raw_analyst_ratings.csv    # News headlines
+│   ├── AAPL_historical_data.csv      # Stock price data for AAPL
+│   ├── AMZN_historical_data.csv      # Stock price data for AMZN
+│   ├── GOOG_historical_data.csv      # Stock price data for GOOG
+│   ├── TSLA_historical_data.csv      # Stock price data for TSLA
+│   └── META_historical_data.csv      # Stock price data for META
+├── notebooks/
+│   ├── \*.png            # images
+│   └── README.md
+├── scripts/
+│   ├── eda.py
+│   ├── fetch_stock_data.py         # Data download
+│   ├── setup_nlp.py
+│   ├── technical_analysis.py 
+│   └── task3_sentiment_analysis.py # Main analysis
+├── images/
+│   └── sentiment_vs_return.png    # Output visualization
+├── requirements.txt
+└── README.md
+```
+
+- **Technical Analysis**: Implements SMA, RSI, and MACD indicators for Microsoft (MSFT)
+- **Sentiment Analysis**: Correlates news sentiment with Agilent Technologies (A) stock returns
