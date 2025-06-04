@@ -35,7 +35,7 @@ python scripts/fetch_stock_data.py
 # 3. Run analysis
 python scripts/task3_sentiment_analysis.py
 ```
-#📁 Repository Structure
+# 📁 Repository Structure
 
 ```plain text
 .
