@@ -34,9 +34,8 @@ python scripts/fetch_stock_data.py
 
 # 3. Run analysis
 python scripts/task3_sentiment_analysis.py
-
-#📁 Repository Structure
 ```
+#📁 Repository Structure
 
 ```plain text
 .
@@ -62,5 +61,5 @@ python scripts/task3_sentiment_analysis.py
 └── README.md
 ```
 
-- **Technical Analysis**: Implements SMA, RSI, and MACD indicators for Microsoft (MSFT)
-- **Sentiment Analysis**: Correlates news sentiment with Agilent Technologies (A) stock returns
+- **Technical Analysis**: Implements SMA, RSI, and MACD indicators for MSFT, 
+- **Sentiment Analysis**: Correlates news sentiment with GOOG, AMZN, TSLA, AAPL stock returns
